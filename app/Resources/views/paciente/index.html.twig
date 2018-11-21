@@ -1,19 +1,22 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Pacientes list</h1>
+<div class="grid-container">
+    
+
+    <h1>Lista de pacientes</h1>
 
     <table>
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Name</th>
-                <th>Lastname</th>
-                <th>Age</th>
-                <th>Idnumber</th>
-                <th>Idtype</th>
-                <th>Observation</th>
-                <th>Actions</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Años</th>
+                <th>Numero de tlf</th>
+                <th>Identificacion</th>
+                <th>Observaciones</th>
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
@@ -29,10 +32,10 @@
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('paciente_show', { 'id': paciente.id }) }}">show</a>
+                            <a href="{{ path('paciente_show', { 'id': paciente.id }) }}" class="hollow button"><i class="far fa-eye"></i>Ver</a>
                         </li>
                         <li>
-                            <a href="{{ path('paciente_edit', { 'id': paciente.id }) }}">edit</a>
+                            <a href="{{ path('paciente_edit', { 'id': paciente.id }) }}" class="hollow button"><i class="fas fa-edit"></i>Editar</a>
                         </li>
                     </ul>
                 </td>
@@ -40,10 +43,6 @@
         {% endfor %}
         </tbody>
     </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('paciente_new') }}">Create a new paciente</a>
-        </li>
-    </ul>
+    <a href="{{ path('paciente_new') }}" class="button">Crear nuevo paciente</a>
+</div>
 {% endblock %}

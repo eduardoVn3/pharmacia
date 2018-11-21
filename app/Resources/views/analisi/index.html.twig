@@ -1,14 +1,15 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Analisis list</h1>
+
+    <h1>Lista de analisis</h1>
 
     <table>
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Name</th>
-                <th>Actions</th>
+                <th>Nombre</th>
+                <th>Aciones</th>
             </tr>
         </thead>
         <tbody>
@@ -19,10 +20,10 @@
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('analisi_show', { 'id': analisi.id }) }}">show</a>
+                            <a href="{{ path('analisi_show', { 'id': analisi.id }) }}" class="hollow button"><i class="far fa-eye"></i>Ver</a>
                         </li>
                         <li>
-                            <a href="{{ path('analisi_edit', { 'id': analisi.id }) }}">edit</a>
+                            <a href="{{ path('analisi_edit', { 'id': analisi.id }) }}" class="hollow button"><i class="fas fa-edit"></i>Editar</a>
                         </li>
                     </ul>
                 </td>
@@ -30,10 +31,5 @@
         {% endfor %}
         </tbody>
     </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('analisi_new') }}">Create a new analisi</a>
-        </li>
-    </ul>
+    <a href="{{ path('analisi_new') }}" class="button">Crear un nuevo analisis</a>
 {% endblock %}

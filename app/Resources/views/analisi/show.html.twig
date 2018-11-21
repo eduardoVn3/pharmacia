@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Analisi</h1>
+    <h1>Analisis</h1>
 
     <table>
         <tbody>
@@ -10,23 +10,14 @@
                 <td>{{ analisi.id }}</td>
             </tr>
             <tr>
-                <th>Name</th>
+                <th>Nombre</th>
                 <td>{{ analisi.name }}</td>
             </tr>
         </tbody>
     </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('analisi_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('analisi_edit', { 'id': analisi.id }) }}">Edit</a>
-        </li>
-        <li>
+            <a href="{{ path('analisi_index') }}" class="button">Regresar a la lista</a>
+            <a href="{{ path('analisi_edit', { 'id': analisi.id }) }}" class="hollow button warning">editar</a>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+                <input type="submit" value="Borrar" class="hollow button alert">
             {{ form_end(delete_form) }}
-        </li>
-    </ul>
 {% endblock %}

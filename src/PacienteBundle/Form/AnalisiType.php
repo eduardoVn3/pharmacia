@@ -13,7 +13,9 @@ class AnalisiType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('name')->add('paciente');
+        $builder
+        ->add('name',null,['label'=>'Nombre del analisis'])
+        ->add('paciente',null,['label'=>'Seleccionar un paciente']);
     }/**
      * {@inheritdoc}
      */

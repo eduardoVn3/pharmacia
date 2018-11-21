@@ -1,6 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+<div class="grid-container">
     <h1>Paciente</h1>
 
     <table>
@@ -10,43 +11,39 @@
                 <td>{{ paciente.id }}</td>
             </tr>
             <tr>
-                <th>Name</th>
+                <th>Nombre</th>
                 <td>{{ paciente.name }}</td>
             </tr>
             <tr>
-                <th>Lastname</th>
+                <th>Apellido</th>
                 <td>{{ paciente.lastName }}</td>
             </tr>
             <tr>
-                <th>Age</th>
+                <th>Años</th>
                 <td>{{ paciente.age }}</td>
             </tr>
             <tr>
-                <th>Idnumber</th>
+                <th>Numero de telefono</th>
                 <td>{{ paciente.idNumber }}</td>
             </tr>
             <tr>
-                <th>Idtype</th>
+                <th>Tipo de documentacion</th>
                 <td>{{ paciente.idType }}</td>
             </tr>
             <tr>
-                <th>Observation</th>
+                <th>Observacion</th>
                 <td>{{ paciente.observation }}</td>
             </tr>
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('paciente_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('paciente_edit', { 'id': paciente.id }) }}">Edit</a>
-        </li>
-        <li>
+            <a href="{{ path('paciente_index') }}" class="button">Volver a la lista</a>
+            <a href="{{ path('paciente_edit', { 'id': paciente.id }) }}" class="hollow button warning">Editar</a>
+
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+                <input type="submit" class="hollow button alert" value="Borrrar">
             {{ form_end(delete_form) }}
-        </li>
-    </ul>
+
+
+</div>
 {% endblock %}

@@ -1,21 +1,18 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Paciente edit</h1>
+<div class="grid-container">
+    <h1>Editar paciente</h1>
 
     {{ form_start(edit_form) }}
         {{ form_widget(edit_form) }}
-        <input type="submit" value="Edit" />
+        <input type="submit" class="button" value="Editar" />
     {{ form_end(edit_form) }}
 
-    <ul>
-        <li>
-            <a href="{{ path('paciente_index') }}">Back to the list</a>
-        </li>
-        <li>
+            <a href="{{ path('paciente_index') }}" class="hollow button warning">Volver a la lista</a>
+
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+                <input type="submit" class="hollow button alert" value="Borrar">
             {{ form_end(delete_form) }}
-        </li>
-    </ul>
+</div>
 {% endblock %}
